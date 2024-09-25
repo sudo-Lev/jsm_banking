@@ -163,7 +163,7 @@
   }
 
   .profile {
-    @apply relative flex px-6 max-xl:justify-center;
+    @apply relative flex px-6 top-24 max-xl:justify-center;
   }
 
   .profile-img {
