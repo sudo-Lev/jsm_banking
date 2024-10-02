@@ -6,8 +6,9 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 import { sidebarLinks } from '@/constants'
 import { usePathname } from 'next/navigation'
+import Footer from './Footer'
 
-function Sidebar({user}: SidebarProps) {
+function Sidebar({ user }: SidebarProps) {
   const pathname = usePathname()
   return (
     <section className="sidebar">
@@ -20,18 +21,18 @@ function Sidebar({user}: SidebarProps) {
 
           const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
           return (
-            <Link className={cn('sidebar-link', {'bg-bank-gradient': isActive})} href={item.route} key={item.label}>
+            <Link className={cn('sidebar-link', { 'bg-bank-gradient': isActive })} href={item.route} key={item.label}>
               <div className="relative size-6">
-                <Image src={item.imgURL} alt={item.label} fill className={cn({'brightness-[3] invert-0': isActive})} />
+                <Image src={item.imgURL} alt={item.label} fill className={cn({ 'brightness-[3] invert-0': isActive })} />
               </div>
-              <p className={cn('sidebar-label', {'!text-white': isActive})}>{item.label}</p>
+              <p className={cn('sidebar-label', { '!text-white': isActive })}>{item.label}</p>
             </Link>
           )
         })}
 
-      USER
+        USER
       </nav>
-      FOOTER
+      <Footer user={user} />
     </section>
   )
 }

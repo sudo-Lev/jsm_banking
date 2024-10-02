@@ -1,23 +1,22 @@
 'use client'
 
 import React from 'react'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import Image from 'next/image'
+import Footer from './Footer'
+
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { sidebarLinks } from '@/constants'
 import { cn } from '@/lib/utils'
 
 
-function MobileNav({user}: MobileNavProps) {
+function MobileNav({ user }: MobileNavProps) {
   const pathname = usePathname()
   return (
     <section className="w-full nax-w-[264px]">
@@ -38,11 +37,11 @@ function MobileNav({user}: MobileNavProps) {
                   const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
                   return (
                     <SheetClose asChild key={item.route}>
-                      <Link className={cn('mobilenav-sheet_close w-full', {'bg-bank-gradient': isActive})} href={item.route} key={item.label}>
+                      <Link className={cn('mobilenav-sheet_close w-full', { 'bg-bank-gradient': isActive })} href={item.route} key={item.label}>
                         <div className="relative size-6">
-                          <Image width={20} height={20} src={item.imgURL} alt={item.label} className={cn({'brightness-[3] invert-0': isActive})} />
+                          <Image width={20} height={20} src={item.imgURL} alt={item.label} className={cn({ 'brightness-[3] invert-0': isActive })} />
                         </div>
-                        <p className={cn('text-16 font-semibold text-black-2', {'text-white': isActive})}>{item.label}</p>
+                        <p className={cn('text-16 font-semibold text-black-2', { 'text-white': isActive })}>{item.label}</p>
                       </Link>
                     </SheetClose>
                   )
@@ -50,7 +49,7 @@ function MobileNav({user}: MobileNavProps) {
               </nav>
             </SheetClose>
 
-            FOOTER
+            <Footer user={user} type="mobile" />
 
           </div>
         </SheetContent>
