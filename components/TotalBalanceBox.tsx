@@ -14,7 +14,7 @@ function TotalBalanceBox({accounts = [], totalBanks, totalCurrentBalance}: Total
           Bank Accounts: {totalBanks}
         </h2>
         <div className="flex flex-col gap-2">
-          <p className="total-balance-label">
+          <p className="total-balance-label hover:text-red-500 transition duration-900 ease-in-out cursor-pointer">
             Total Current Balance
           </p>
 

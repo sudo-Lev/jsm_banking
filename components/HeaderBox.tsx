@@ -1,6 +1,6 @@
 import React from 'react'
 
-function HeaderBox({type = "title", title, user, subtext}: HeaderBoxProps) {
+function HeaderBox({ type = "title", title, user, subtext }: HeaderBoxProps) {
   return (
     <div className="header-box">
       <h1 className="header-box-title">
@@ -10,6 +10,7 @@ function HeaderBox({type = "title", title, user, subtext}: HeaderBoxProps) {
         </span>}
       </h1>
       <p className="header-box-subtext">{subtext}</p>
+
     </div>
   )
 }
