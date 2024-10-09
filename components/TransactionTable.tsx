@@ -78,7 +78,7 @@ function TransactionTable({ transactions }: TransactionTableProps) {
               </TableCell>
 
               <TableCell className="pl-2 pr-10 max-md:hidden">
-                <CategoryBadge category={transaction.category} />
+                <CategoryBadge category={transaction.category[0]} />
               </TableCell>
             </TableRow>
           )
