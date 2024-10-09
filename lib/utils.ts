@@ -140,15 +140,17 @@ export function countTransactionCategories(
   transactions &&
     transactions.forEach((transaction) => {
       // Extract the category from the transaction
-      const category = transaction.category;
+      const categories = Array.isArray(transaction.category) ? transaction.category : [transaction.category];
 
-      // If the category exists in the categoryCounts object, increment its count
-      if (categoryCounts.hasOwnProperty(category)) {
-        categoryCounts[category]++;
-      } else {
-        // Otherwise, initialize the count to 1
-        categoryCounts[category] = 1;
-      }
+      categories.forEach(category => {
+        // If the category exists in the categoryCounts object, increment its count
+        if (categoryCounts.hasOwnProperty(category)) {
+          categoryCounts[category]++;
+        } else {
+          // Otherwise, initialize the count to 1
+          categoryCounts[category] = 1;
+        }
+      });
 
       // Increment total count
       totalCount++;
