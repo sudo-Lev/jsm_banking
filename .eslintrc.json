@@ -36,25 +36,25 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // Понизили с error до warn
-    "@typescript-eslint/no-unused-expressions": ["warn", { "argsIgnorePattern": "^_" }], // Понизили с error до warn
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-unused-expressions": ["warn", { "argsIgnorePattern": "^_" }],
     "react/prop-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/order": [
-      "warn", // Понизили с error до warn
+      "warn",
       {
         "groups": ["builtin", "external", "internal"],
         "newlines-between": "always"
       }
     ],
     "jsx-a11y/anchor-is-valid": "off",
-    "no-console": ["warn", { "allow": ["warn", "error", "log"] }], // Разрешаем console.log
+    "no-console": ["warn", { "allow": ["warn", "error", "log"] }],
     "react/jsx-filename-extension": [
       "warn",
       { "extensions": [".jsx", ".tsx"] }
     ],
-    "react-hooks/rules-of-hooks": "warn", // Понизили с error до warn
-    "react-hooks/exhaustive-deps": "off" // Отключили строгую проверку зависимостей эффектов
+    "react-hooks/rules-of-hooks": "warn",
+    "react-hooks/exhaustive-deps": "off"
   },
   "overrides": [
     {

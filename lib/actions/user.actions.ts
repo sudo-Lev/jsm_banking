@@ -28,7 +28,7 @@ export const getUserInfo = async ({ userId }: getUserInfoProps) => {
 
     return parseStringify(user.documents[0]);
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 }
 
@@ -224,8 +224,6 @@ export async function exchangePublicToken({ publicToken, user }: exchangePublicT
       throw new Error('Error adding funding source')
     }
 
-    console.log()
-
     await createBankAccount({
       userId: user.$id,
       bankId: itemId,
@@ -257,7 +255,7 @@ export const getBanks = async ({ userId }: getBanksProps) => {
 
     return parseStringify(banks.documents);
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 }
 
@@ -273,6 +271,24 @@ export const getBank = async ({ documentId }: getBankProps) => {
 
     return parseStringify(bank.documents[0]);
   } catch (error) {
-    console.log(error)
+    console.error(error)
+  }
+}
+
+export const getBankByAccountId = async ({ accountId }: getBankByAccountIdProps) => {
+  try {
+    const { database } = await createAdminClient();
+
+    const bank = await database.listDocuments(
+      DATABASE_ID!,
+      BANK_COLLECTION_ID!,
+      [Query.equal('accountId', [accountId])]
+    )
+
+    if (bank.total !== 1) return null
+
+    return parseStringify(bank.documents[0]);
+  } catch (error) {
+    console.error(error)
   }
 }

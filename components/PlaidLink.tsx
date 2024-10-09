@@ -51,13 +51,13 @@ function PlaidLink({ user, variant }: PlaidLinkProps) {
 					</Button>
 				) : variant === 'ghost' ? (
 					<Button variant="ghost" onClick={() => open()} className="plaidlink-ghost">
-							<Image src="/icons/connect-bank.svg" alt="Connect Bank" width={20} height={20} />
-							<p className="hidden text-[16px] font-semibold text-black-2">
-								Connect bank
-							</p>
+						<Image src="/icons/connect-bank.svg" alt="Connect Bank" width={20} height={20} />
+						<p className="hidden text-[16px] font-semibold text-black-2">
+							Connect bank
+						</p>
 					</Button>
 				) : (
-					<a onClick={() => open()} className="sidebar-link shadow-none cursor-pointer">
+					<a onClick={() => open()} className="sidebar-link">
 						<Image src="/icons/connect-bank.svg" alt="Connect Bank" width={20} height={20} />
 						<p className="text-[16px] font-semibold text-black-2">
 							Connect bank
